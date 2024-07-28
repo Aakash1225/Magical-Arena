@@ -57,7 +57,6 @@ public class BattleArena {
     public void printWinner() {
         if (player1.isAlive()) {
             System.out.println(player1 + " wins!");
-            System.out.println("------------------------------------------------------------------------");
         } else {
             System.out.println(player2 + " wins!");
         }
