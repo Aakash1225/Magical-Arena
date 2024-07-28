@@ -42,5 +42,14 @@ public class BattleArenaTest {
         assertTrue(defender.getHealth() <= initialHealth); // Defender's health should decrease or stay the same
     }
 
-    
+    @Test
+    public void testGameStartAndBattle() {
+        Player player1 = new Player("Player A", 50, 10, 5);
+        Player player2 = new Player("Player B", 100, 10, 5);
+
+        BattleArena arena = new BattleArena(player1, player2);
+        arena.startBattle();
+        assertTrue(player1.isAlive() || player2.isAlive());
+        assertFalse(player1.isAlive() && player2.isAlive());
+    }
 }
