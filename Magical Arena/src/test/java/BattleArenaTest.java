@@ -26,8 +26,21 @@ public class BattleArenaTest {
 
     @Test
     public void testCalculateDamage() {
-        BattleArena arena = new BattleArena(new Player("Player 1", 50, 10, 5), new Player("Player 2", 100, 10, 5));
+        BattleArena arena = new BattleArena(new Player("Player A", 50, 10, 5),
+                            new Player("Player B", 100, 10, 5));
         int damage = arena.calculateDamage(5, 3);
         assertEquals(15, damage);
     }
+
+    @Test
+    public void testPerformAttack() {
+        Player attacker = new Player("Player A", 50, 10, 5);
+        Player defender = new Player("Player B", 100, 10, 5);
+        BattleArena arena = new BattleArena(attacker, defender);
+        int initialHealth = defender.getHealth();
+        arena.performAttack(attacker, defender);
+        assertTrue(defender.getHealth() <= initialHealth); // Defender's health should decrease or stay the same
+    }
+
+    
 }
