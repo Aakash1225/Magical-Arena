@@ -1,5 +1,6 @@
 package test.java;
 
+import main.java.BattleArena;
 import main.java.Dice;
 import main.java.Player;
 import org.junit.Test;
@@ -21,5 +22,12 @@ public class BattleArenaTest {
             int roll = dice.roll(6);
             assertTrue(roll >= 1 && roll <= 6);
         }
+    }
+
+    @Test
+    public void testCalculateDamage() {
+        BattleArena arena = new BattleArena(new Player("Player 1", 50, 10, 5), new Player("Player 2", 100, 10, 5));
+        int damage = arena.calculateDamage(5, 3);
+        assertEquals(15, damage);
     }
 }
