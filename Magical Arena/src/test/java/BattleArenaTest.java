@@ -52,4 +52,25 @@ public class BattleArenaTest {
         assertTrue(player1.isAlive() || player2.isAlive());
         assertFalse(player1.isAlive() && player2.isAlive());
     }
+
+    @Test
+    public void testEdgeCases() {
+        // Very low health
+        Player player1 = new Player("Player 1", 1, 10, 5);
+        Player player2 = new Player("Player 2", 100, 10, 5);
+
+        BattleArena arena = new BattleArena(player1, player2);
+        arena.startBattle();
+        assertFalse(player1.isAlive());
+        assertTrue(player2.isAlive());
+
+        // Equal health
+        player1 = new Player("Player 1", 100, 10, 5);
+        player2 = new Player("Player 2", 100, 10, 5);
+
+        arena = new BattleArena(player1, player2);
+        arena.startBattle();
+        assertTrue(player1.isAlive() || player2.isAlive());
+        assertFalse(player1.isAlive() && player2.isAlive());
+    }
 }
