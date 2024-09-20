@@ -23,8 +23,12 @@ attribute - all positive integers. The player dies if his health attribute touch
 - hamcrest-core-1.3.jar
 - junit-4.13.2.jar
 
-## Run [Main.java](src%2Fmain%2Fjava%2FMain.java)
-- Right-click on Main.java and select Run 'Main'.
+## Run [Main.java](src/main/java/Main.java)
+- Method 1: Right-click on Main.java and select Run 'Main'.
+- Method 2: 
+  - cd Magical Arena/src/main/java 
+  - java Main.java
+
 
 ## Run the Test cases 
 - Right-click on BattleArenaTest.java and select Run 'BattleArenaTest'.
